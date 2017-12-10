@@ -1,3 +1,34 @@
+#### my updates
+
+for better understanding
+https://developers.google.com/actions/identity/oauth2-code-flow 
+---
+
+from the browser
+```bash
+http://localhost:3000/dialog/authorize?response_type=code&client_id=xyz123&redirect_uri=http://localhost:3001
+```
+
+
+```bash
+curl -X POST \
+  http://localhost:3000/oauth/token/ \
+  -H 'authorization: Basic eHl6MTIzOnNzaC1wYXNzd29yZA==' \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'code=<<YOUR_CODE>>&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A3001'
+```
+
+  
+```sh
+ curl -X GET \
+    http://localhost:3000/api/userinfo \
+    -H 'authorization: Bearer <<ACCESS_TOKEN>>' \
+    -H 'cache-control: no-cache' \
+    -H 'postman-token: 897e5c0e-7f9e-beef-1fc5-03e1c728100a'
+```  
+ 
+---
+
 oauth2orize: oauth2 provider example
 ===
 
